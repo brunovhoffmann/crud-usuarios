@@ -1,21 +1,25 @@
 <template>
   <div id="app">
-    <router-view/>
+    <main id="main">
+      <BaseMenu />
+      <transition node="out-in">
+        <router-view/>
+      </transition>
+    </main>
   </div>
 </template>
 
 <script>
+import BaseMenu from '@/components/BaseMenu.vue';
+
 export default {
-  name: 'App'
-}
+  name: 'App',
+  components:{
+    BaseMenu
+  }
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+@import url("./assets/css/main.css");
 </style>
